@@ -40,3 +40,7 @@ h6 {
 }
 
 /* END CSS RESET */
+
+body {
+    background-color: slategrey;
+}
