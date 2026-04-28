@@ -1,13 +1,8 @@
 import "./styles.css";
-import background from "./assets/images/background.webp";
+import { importBackgroundImage } from "./modules/image-background.js";
 
-const imageBackground = document.createElement("img");
 const container = document.createElement("div");
-
-imageBackground.src = background;
-imageBackground.alt = "a room filled with lots of different types of records";
-imageBackground.id = "background-image";
 container.id = "container-image";
 
-container.appendChild(imageBackground);
+importBackgroundImage(container);
 document.body.appendChild(container);
