@@ -44,3 +44,7 @@ h6 {
 body {
     overflow: clip;
 }
+
+#container-image {
+    clip-path: inset(0 0 0 25%);
+}
