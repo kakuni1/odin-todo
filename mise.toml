@@ -1,0 +1,18 @@
+[tools]
+deno = "2"
+
+[tasks.dev]
+description = "Start dev server"
+run = "deno run --allow-net --allow-read jsr:@std/http@1.0.0/file-server --port 8000 src"
+[tasks.fmt]
+description = "Format code"
+run = "deno fmt"
+[tasks."fmt-check"]
+description = "Check formatting"
+run = "deno fmt --check"
+[tasks.lint]
+description = "Lint code"
+run = "deno lint"
+[tasks.ci]
+description = "Run CI checks"
+depends = ["fmt-check", "lint"]
