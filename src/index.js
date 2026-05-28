@@ -10,5 +10,5 @@ sidebar.id = "container-sidebar";
 importBackgroundImage(background);
 loadInitialSidebar(sidebar);
 
-document.body.appendChild(background);
 document.body.appendChild(sidebar);
+document.body.appendChild(background);
