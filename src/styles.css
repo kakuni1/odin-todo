@@ -72,3 +72,9 @@ body {
   width: 100%;
   height: 100%;
 }
+
+#container-sidebar h2 {
+  font-family: "WDXL";
+  font-size: 48px;
+  width: fit-content;
+}
