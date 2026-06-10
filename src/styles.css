@@ -73,6 +73,11 @@ body {
   opacity: 0.55;
 }
 
+#container-sidebar {
+  background-color: rgba(192, 192, 192, 0.85);
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
 #container-sidebar h2 {
   font-family: "WDXL";
   font-size: 48px;
