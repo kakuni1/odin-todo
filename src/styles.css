@@ -74,11 +74,12 @@ body {
 }
 
 #container-sidebar {
-  background-color: #141821;
+  background-color: #282e3b;
 }
 
 #container-sidebar h2 {
   font-family: "WDXL";
   font-size: 48px;
   width: fit-content;
+  color: #e3e6ea;
 }
