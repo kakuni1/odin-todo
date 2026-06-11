@@ -85,6 +85,12 @@ body {
   color: #bfbdb6;
 }
 
+.button-sidebar-collapse {
+  position: absolute;
+  top: 10px;
+  left: calc(var(--sidebar-width) - 50px);
+}
+
 #container-main {
   background-color: #141821;
 }
