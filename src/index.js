@@ -1,4 +1,4 @@
-// import { icons } from "./modules/icons.js";
+import { icons } from "./modules/icons.js";
 import { loadInitialSidebar } from "./modules/sidebar-initial.js";
 
 const addButton = document.createElement("button");
@@ -9,9 +9,9 @@ sidebar.id = "container-sidebar";
 mainArea.id = "container-main";
 
 addButton.classList.add("add-button");
-// addButton.innerHTML = icons["icon-add"];
+addButton.innerHTML = icons["icon-sidebar-collapse"];
 
 loadInitialSidebar(sidebar);
-// sidebar.appendChild(addButton);
+sidebar.appendChild(addButton);
 document.body.appendChild(sidebar);
 document.body.appendChild(mainArea);
