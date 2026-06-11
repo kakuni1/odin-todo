@@ -1,17 +1,17 @@
 import { icons } from "./modules/icons.js";
 import { loadInitialSidebar } from "./modules/sidebar-initial.js";
 
-const addButton = document.createElement("button");
+const buttonSidebar = document.createElement("button");
 const mainArea = document.createElement("div");
 const sidebar = document.createElement("div");
 
 sidebar.id = "container-sidebar";
 mainArea.id = "container-main";
 
-addButton.classList.add("add-button");
-addButton.innerHTML = icons["icon-sidebar-collapse"];
+buttonSidebar.classList.add("button-sidebar-collapse");
+buttonSidebar.innerHTML = icons["icon-sidebar-collapse"];
 
 loadInitialSidebar(sidebar);
-sidebar.appendChild(addButton);
+sidebar.appendChild(buttonSidebar);
 document.body.appendChild(sidebar);
 document.body.appendChild(mainArea);
