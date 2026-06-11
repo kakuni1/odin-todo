@@ -23,7 +23,6 @@ export const icons = {
       <path d="M14 11v6" />
     </svg>
   `,
-
   "icon-minus": `
     <svg
       xmlns="http://www.w3.org/2000/svg"
