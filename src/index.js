@@ -1,5 +1,5 @@
 import { icons } from "./modules/icons.js";
-import { sidebarInitialState } from "./modules/sidebar.js";
+import { sidebarLoad } from "./modules/sidebar.js";
 
 const buttonSidebar = document.createElement("button");
 const mainArea = document.createElement("div");
@@ -11,7 +11,7 @@ mainArea.id = "container-main";
 buttonSidebar.classList.add("button-sidebar-collapse");
 buttonSidebar.innerHTML = icons["icon-sidebar-collapse"];
 
-sidebarInitialState(sidebar);
+sidebarLoad(sidebar);
 sidebar.appendChild(buttonSidebar);
 document.body.appendChild(sidebar);
 document.body.appendChild(mainArea);
