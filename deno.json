@@ -1,6 +1,0 @@
-{
-  "minimumDependencyAge": "P7D",
-  "imports": {
-    "date-fns": "npm:date-fns@4.1.0"
-  }
-}

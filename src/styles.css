@@ -1,16 +1,16 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 * {
-  margin: 0;
+	margin: 0;
 }
 
 body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
 }
 
 img,
@@ -18,15 +18,15 @@ picture,
 video,
 canvas,
 svg {
-  display: block;
-  max-width: 100%;
+	display: block;
+	max-width: 100%;
 }
 
 input,
 button,
 textarea,
 select {
-  font: inherit;
+	font: inherit;
 }
 
 p,
@@ -36,61 +36,61 @@ h3,
 h4,
 h5,
 h6 {
-  overflow-wrap: break-word;
+	overflow-wrap: break-word;
 }
 
 /* END CSS RESET */
 
 :root {
-  --sidebar-width: 330px;
+	--sidebar-width: 330px;
 }
 
 @font-face {
-  font-family: "WDXL";
-  src: url("./assets/fonts/WDXL-Regular.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+	font-family: "WDXL";
+	src: url("./assets/fonts/WDXL-Regular.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
 }
 
 body {
-  display: grid;
-  min-height: 100vh;
-  font-family: system-ui, -apple-system, sans-serif;
-  grid-template-columns: var(--sidebar-width) 1fr;
-  overflow: clip;
+	display: grid;
+	min-height: 100vh;
+	font-family: system-ui, -apple-system, sans-serif;
+	grid-template-columns: var(--sidebar-width) 1fr;
+	overflow: clip;
 }
 
 #container-image {
-  position: relative;
+	position: relative;
 }
 
 #container-image img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  filter: blur(8px);
-  opacity: 0.55;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	filter: blur(8px);
+	opacity: 0.55;
 }
 
 #container-sidebar {
-  background-color: #0f131a;
+	background-color: #0f131a;
 }
 
 #container-sidebar h2 {
-  font-family: "WDXL";
-  font-size: 48px;
-  width: fit-content;
-  padding-left: 12px;
-  color: #bfbdb6;
+	font-family: "WDXL", system-ui, -apple-system, sans-serif;
+	font-size: 48px;
+	width: fit-content;
+	padding-left: 12px;
+	color: #bfbdb6;
 }
 
 .button-sidebar-collapse {
-  position: absolute;
-  top: 10px;
-  left: calc(var(--sidebar-width) - 50px);
+	position: absolute;
+	top: 10px;
+	left: calc(var(--sidebar-width) - 50px);
 }
 
 #container-main {
-  background-color: #141821;
+	background-color: #141821;
 }

@@ -1,18 +1,24 @@
 [tools]
-deno = "2"
+"node" = "lts"
+"biome" = "latest"
+"npm:serve" = "latest"
 
 [tasks.dev]
-description = "Start dev server"
-run = "deno run --allow-net --allow-read jsr:@std/http@1.0.0/file-server --port 8000 src"
+description = "Start dev server with serve"
+run = "serve --no-clipboard"
+
 [tasks.fmt]
-description = "Format code"
-run = "deno fmt"
-[tasks."fmt-check"]
-description = "Check formatting"
-run = "deno fmt --check"
+description = "Auto-format source files"
+run = "biome check --write src/"
+
+[tasks.fmt-check]
+description = "Check formatting only"
+run = "biome ci src/"
+
 [tasks.lint]
-description = "Lint code"
-run = "deno lint"
+description = "Lint source files"
+run = "biome lint src/"
+
 [tasks.ci]
-description = "Run CI checks"
+description = "Run all CI checks"
 depends = ["fmt-check", "lint"]
