@@ -1,6 +1,5 @@
-export function loadInitialSidebar(container) {
+export function sidebarInitialState(container) {
 	const h2 = document.createElement("h2");
 	h2.textContent = "Projects";
-
 	container.appendChild(h2);
 }
