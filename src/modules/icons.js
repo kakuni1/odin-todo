@@ -1,5 +1,5 @@
 export const icons = {
-  "icon-add": `
+	"icon-add": `
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -23,7 +23,7 @@ export const icons = {
       <path d="M14 11v6" />
     </svg>
   `,
-  "icon-minus": `
+	"icon-minus": `
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -46,7 +46,7 @@ export const icons = {
       <path d="M11 14h6" />
     </svg>
   `,
-  "icon-sidebar-collapse": `
+	"icon-sidebar-collapse": `
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -67,7 +67,7 @@ export const icons = {
       <path d="M15 10l-2 2l2 2" />
     </svg>
   `,
-  "icon-sidebar-expand": `
+	"icon-sidebar-expand": `
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
