@@ -85,6 +85,11 @@ body {
 	color: #bfbdb6;
 }
 
+/* hide sidebar on mouse click event */
+body:has(#container-sidebar.hide) {
+	grid-template-columns: 0px 1fr;
+}
+
 .button-sidebar-collapse {
 	position: absolute;
 	top: 10px;

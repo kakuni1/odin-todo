@@ -1,3 +1,4 @@
+import { bindEvents } from "./modules/events.js";
 import { icons } from "./modules/icons.js";
 import { sidebarLoad } from "./modules/sidebar.js";
 
@@ -15,3 +16,4 @@ sidebarLoad(sidebar);
 sidebar.appendChild(sidebarButton);
 document.body.appendChild(sidebar);
 document.body.appendChild(mainArea);
+bindEvents(sidebar, sidebarButton);
