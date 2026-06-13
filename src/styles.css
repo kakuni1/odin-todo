@@ -90,7 +90,7 @@ body:has(#container-sidebar.hide) {
 	grid-template-columns: 0px 1fr;
 }
 
-.button-sidebar-collapse {
+.button-sidebar {
 	position: absolute;
 	top: 10px;
 	left: calc(var(--sidebar-width) - 50px);

@@ -9,11 +9,10 @@ const sidebar = document.createElement("div");
 sidebar.id = "container-sidebar";
 mainArea.id = "container-main";
 
-sidebarButton.classList.add("button-sidebar-collapse");
-sidebarButton.innerHTML = icons["icon-sidebar-collapse"];
-
 sidebarLoad(sidebar);
 sidebar.appendChild(sidebarButton);
 document.body.appendChild(sidebar);
 document.body.appendChild(mainArea);
+sidebarButton.innerHTML = icons["icon-sidebar-collapse"];
+sidebarButton.classList.add("button-sidebar");
 bindEvents(sidebar, sidebarButton);
