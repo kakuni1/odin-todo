@@ -13,6 +13,7 @@ sidebarLoad(sidebar);
 sidebar.appendChild(sidebarButton);
 document.body.appendChild(sidebar);
 document.body.appendChild(mainArea);
+document.body.dataset.sidebar = "expanded";
 sidebarButton.innerHTML = icons["icon-sidebar-collapse"];
 sidebarButton.classList.add("button-sidebar");
 bindEvents(sidebar, sidebarButton);
