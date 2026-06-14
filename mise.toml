@@ -5,7 +5,7 @@
 
 [tasks.dev]
 description = "Start dev server with serve"
-run = "serve --no-clipboard"
+run = "serve --no-clipboard src/"
 
 [tasks.fmt]
 description = "Auto-format source files"
