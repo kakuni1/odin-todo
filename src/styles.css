@@ -61,18 +61,6 @@ body {
 	overflow: clip;
 }
 
-#container-image {
-	position: relative;
-}
-
-#container-image img {
-	object-fit: cover;
-	width: 100%;
-	height: 100%;
-	filter: blur(8px);
-	opacity: 0.55;
-}
-
 #container-sidebar {
 	background-color: #0f131a;
 }
