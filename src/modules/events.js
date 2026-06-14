@@ -7,6 +7,7 @@ import { icons } from "./icons.js";
 
 export function bindEvents(sidebar, sidebarButton) {
 	sidebarButton.addEventListener("click", () => {
+		// toggle hide state & swap sidebar icon
 		const isHidden = sidebar.classList.toggle("hide");
 		sidebarButton.innerHTML = icons[ isHidden ? "icon-sidebar-expand" : "icon-sidebar-collapse" ]
 	});
