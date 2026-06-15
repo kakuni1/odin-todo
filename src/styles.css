@@ -83,9 +83,18 @@ body:has(#container-sidebar.hide) #container-sidebar {
 
 .button-sidebar {
 	position: absolute;
+	color: #bfbdb6;
+	background: transparent;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
 	top: 10px;
 	left: calc(var(--sidebar-width) - 50px);
 	transition: left 0.25s ease;
+}
+
+.button-sidebar:hover {
+	background: rgba(255, 255, 255, 0.15);
 }
 
 body:has(#container-sidebar.hide) .button-sidebar {

@@ -1,4 +1,4 @@
 export function getIcon(name) {
 	// send name of svg sprite
-	return `<svg width="20" height="20"><use href="./assets/icons.svg#${name}"></use></svg>`;
+	return `<svg width="30" height="30"><use href="./assets/icons.svg#${name}"></use></svg>`;
 }
