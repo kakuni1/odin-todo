@@ -77,10 +77,6 @@ body {
 	color: #bfbdb6;
 }
 
-body:has(#container-sidebar.hide) #container-sidebar {
-	width: 0px;
-}
-
 .button-sidebar {
 	position: absolute;
 	color: #bfbdb6;
@@ -99,6 +95,10 @@ body:has(#container-sidebar.hide) #container-sidebar {
 
 .button-sidebar:active {
 	transform: scale(0.9);
+}
+
+body:has(#container-sidebar.hide) #container-sidebar {
+	width: 0px;
 }
 
 body:has(#container-sidebar.hide) .button-sidebar {
