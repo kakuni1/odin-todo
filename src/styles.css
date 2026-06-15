@@ -97,6 +97,10 @@ body:has(#container-sidebar.hide) #container-sidebar {
 	background: rgba(255, 255, 255, 0.15);
 }
 
+.button-sidebar:active {
+	transform: scale(0.9);
+}
+
 body:has(#container-sidebar.hide) .button-sidebar {
 	left: 15px;
 }
