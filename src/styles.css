@@ -57,12 +57,16 @@ body {
 	display: grid;
 	min-height: 100vh;
 	font-family: system-ui, -apple-system, sans-serif;
-	grid-template-columns: var(--sidebar-width) 1fr;
 	overflow: clip;
 }
 
 #container-sidebar {
+	position: absolute;
 	background-color: #0f131a;
+	width: var(--sidebar-width);
+	height: 100%;
+	transition: width 0.125s ease;
+	overflow: hidden;
 }
 
 #container-sidebar h2 {
@@ -73,15 +77,19 @@ body {
 	color: #bfbdb6;
 }
 
-/* hide sidebar on mouse click event */
-body:has(#container-sidebar.hide) {
-	grid-template-columns: 0px 1fr;
+body:has(#container-sidebar.hide) #container-sidebar {
+	width: 0px;
 }
 
 .button-sidebar {
 	position: absolute;
 	top: 10px;
 	left: calc(var(--sidebar-width) - 50px);
+	transition: left 0.25s ease;
+}
+
+body:has(#container-sidebar.hide) .button-sidebar {
+	left: 15px;
 }
 
 #container-main {

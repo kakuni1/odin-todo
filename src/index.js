@@ -10,7 +10,7 @@ sidebar.id = "container-sidebar";
 mainArea.id = "container-main";
 
 sidebarLoad(sidebar);
-sidebar.appendChild(sidebarButton);
+mainArea.appendChild(sidebarButton);
 document.body.appendChild(sidebar);
 document.body.appendChild(mainArea);
 document.body.dataset.sidebar = "expanded";
