@@ -8,12 +8,12 @@ const sidebar = document.createElement("div");
 
 sidebar.id = "container-sidebar";
 mainArea.id = "container-main";
+sidebarButton.className = "button-sidebar";
 
 sidebarLoad(sidebar);
 mainArea.appendChild(sidebarButton);
 document.body.appendChild(sidebar);
 document.body.appendChild(mainArea);
-document.body.dataset.sidebar = "expanded";
-sidebarButton.innerHTML = getIcon("icon-sidebar-collapse");
-sidebarButton.classList.add("button-sidebar");
-bindEvents(sidebar, sidebarButton);
+document.body.dataset.sidebar = "show";
+sidebarButton.innerHTML = getIcon("icon-sidebar-show");
+bindEvents(sidebarButton);

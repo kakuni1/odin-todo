@@ -89,6 +89,11 @@ body {
 	transition: left 0.25s ease;
 }
 
+.button-sidebar svg {
+	width: 24px;
+	height: 24px;
+}
+
 .button-sidebar:hover {
 	background: rgba(255, 255, 255, 0.15);
 }
@@ -97,12 +102,12 @@ body {
 	transform: scale(0.9);
 }
 
-body:has(#container-sidebar.hide) #container-sidebar {
-	width: 0px;
+body[data-sidebar="hide"] .button-sidebar {
+	left: 15px;
 }
 
-body:has(#container-sidebar.hide) .button-sidebar {
-	left: 15px;
+body[data-sidebar="hide"] #container-sidebar {
+	width: 0px;
 }
 
 #container-main {

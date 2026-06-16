@@ -5,13 +5,11 @@ import { getIcon } from "./icons.js";
  * @param {HTMLButtonElement} sidebarButton
  */
 
-export function bindEvents(sidebar, sidebarButton) {
+export function bindEvents(sidebarButton) {
 	sidebarButton.addEventListener("click", () => {
-		// toggle hide state & swap sidebar icon
-		const isHidden = sidebar.classList.toggle("hide");
-		document.body.dataset.sidebar = isHidden ? "collapsed" : "expanded";
-		sidebarButton.innerHTML = getIcon(
-			isHidden ? "icon-sidebar-expand" : "icon-sidebar-collapse",
-		);
+		const sidebarState =
+			document.body.dataset.sidebar === "show" ? "hide" : "show";
+		document.body.dataset.sidebar = sidebarState;
+		sidebarButton.innerHTML = getIcon(`icon-sidebar-${sidebarState}`);
 	});
 }
