@@ -65,7 +65,7 @@ body {
 	background-color: #0f131a;
 	width: var(--sidebar-width);
 	height: 100%;
-	transition: width 0.125s ease;
+	transition: transform 0.125s ease;
 	overflow: hidden;
 }
 
@@ -107,7 +107,7 @@ body[data-sidebar="hide"] .button-sidebar {
 }
 
 body[data-sidebar="hide"] #container-sidebar {
-	width: 0px;
+	transform: translateX(-100%);
 }
 
 #container-main {
