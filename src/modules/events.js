@@ -4,7 +4,7 @@ import { getIcon } from "./icons.js";
  * @param {HTMLButtonElement} sidebarButton
  */
 
-export function bindEvents(sidebarButton) {
+export function addClickEvent(sidebarButton) {
 	sidebarButton.addEventListener("click", () => {
 		const sidebarState =
 			document.body.dataset.sidebar === "show" ? "hide" : "show";

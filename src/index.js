@@ -1,4 +1,4 @@
-import { bindEvents } from "./modules/events.js";
+import { addClickEvent } from "./modules/events.js";
 import { getIcon } from "./modules/icons.js";
 import { sidebarLoad } from "./modules/sidebar.js";
 
@@ -16,4 +16,4 @@ document.body.appendChild(sidebar);
 document.body.appendChild(mainArea);
 document.body.dataset.sidebar = "show";
 sidebarButton.innerHTML = getIcon("icon-sidebar-show");
-bindEvents(sidebarButton);
+addClickEvent(sidebarButton);
