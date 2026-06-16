@@ -1,7 +1,6 @@
 import { getIcon } from "./icons.js";
 
 /**
- * @param {HTMLElement} sidebar
  * @param {HTMLButtonElement} sidebarButton
  */
 
