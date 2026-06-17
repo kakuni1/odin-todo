@@ -9,15 +9,15 @@ run = "serve --no-clipboard src/"
 
 [tasks.fmt]
 description = "Auto-format source files"
-run = "biome check --write src/"
+run = "biome check --write ."
 
 [tasks.fmt-check]
 description = "Check formatting only"
-run = "biome ci src/"
+run = "biome ci ."
 
 [tasks.lint]
 description = "Lint source files"
-run = "biome lint src/"
+run = "biome lint ."
 
 [tasks.ci]
 description = "Run all CI checks"
