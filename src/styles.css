@@ -94,13 +94,13 @@ body {
 	border-radius: 5px;
 	cursor: pointer;
 	top: 10px;
-	left: calc(var(--sidebar-width) - 50px);
+	left: calc(var(--sidebar-width) - 45px);
 	transition: left 0.25s ease;
 }
 
 .button-sidebar svg {
-	width: 30px;
-	height: 30px;
+	width: 25px;
+	height: 25px;
 }
 
 .button-sidebar:hover {
@@ -112,9 +112,14 @@ body {
 }
 
 #sidebar[data-sidebar="hide"] ~ .button-sidebar {
-	left: 15px;
+	left: 10px;
 }
 
 #sidebar[data-sidebar="hide"] {
 	transform: translateX(-100%);
+}
+
+li {
+	list-style: none;
+	color: #bfbdb6;
 }
