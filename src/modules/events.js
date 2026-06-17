@@ -1,14 +1,11 @@
-import { getIcon } from "./icons.js";
+import { sideButtonSwap } from "./buttons.js";
 
 /**
- * @param {HTMLButtonElement} sidebarButton
+ * @param {HTMLButtonElement} sideButton
+ * @param {HTMLElement} sideArea
  */
-
-export function addClickEvent(sidebarButton) {
-	sidebarButton.addEventListener("click", () => {
-		const sidebarState =
-			document.body.dataset.sidebar === "show" ? "hide" : "show";
-		document.body.dataset.sidebar = sidebarState;
-		sidebarButton.innerHTML = getIcon(`icon-sidebar-${sidebarState}`);
+export function initEvents(sideButton, sideArea) {
+	sideButton.addEventListener("click", () => {
+		sideButtonSwap(sideArea, sideButton);
 	});
 }

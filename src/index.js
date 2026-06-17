@@ -1,19 +1,26 @@
-import { addClickEvent } from "./modules/events.js";
-import { getIcon } from "./modules/icons.js";
-import { sidebarLoad } from "./modules/sidebar.js";
+import { initEvents } from "./modules/events.js";
+import { createButton } from "./utils/icons.js";
 
-const sidebarButton = document.createElement("button");
 const mainArea = document.createElement("div");
-const sidebar = document.createElement("div");
+const sideArea = document.createElement("div");
+const sideButton = document.createElement("button");
+const tasks = document.createElement("h2");
+const projects = document.createElement("h2");
 
-sidebar.id = "container-sidebar";
-mainArea.id = "container-main";
-sidebarButton.className = "button-sidebar";
+mainArea.id = "main";
+sideArea.id = "sidebar";
+createButton(sideButton, "icon-sidebar-hide");
+sideButton.className = "button-sidebar";
+sideButton.setAttribute("aria-label", "Hide sidebar");
+sideButton.setAttribute("aria-expanded", "true");
+sideButton.setAttribute("aria-controls", "sidebar");
+sideArea.dataset.sidebar = "show";
+tasks.textContent = "Tasks";
+projects.textContent = "Projects";
 
-sidebarLoad(sidebar);
-mainArea.appendChild(sidebarButton);
-document.body.appendChild(sidebar);
 document.body.appendChild(mainArea);
-document.body.dataset.sidebar = "show";
-sidebarButton.innerHTML = getIcon("icon-sidebar-show");
-addClickEvent(sidebarButton);
+document.body.appendChild(sideArea);
+document.body.appendChild(sideButton);
+sideArea.appendChild(tasks);
+sideArea.appendChild(projects);
+initEvents(sideButton, sideArea);
