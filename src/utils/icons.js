@@ -1,6 +1,6 @@
 /** @param {string} name */
 export function getIcon(name) {
-	return `<svg aria-hidden="true" focusable="false"><use href="./assets/icons.svg#${name}"></use></svg>`;
+	return `<svg aria-hidden="true"><use href="./assets/icons.svg#${name}"></use></svg>`;
 }
 
 /**
