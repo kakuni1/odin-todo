@@ -120,6 +120,14 @@ body {
 }
 
 li {
+	display: flex;
+	align-items: center;
 	list-style: none;
 	color: #bfbdb6;
+	gap: 8px;
+}
+
+#sidebar li svg {
+	width: 25px;
+	height: 25px;
 }

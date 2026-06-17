@@ -1,4 +1,4 @@
-import { sideButtonSwap } from "./buttons.js";
+import { sideButtonSwap } from "./sidebar.js";
 
 /**
  * @param {HTMLButtonElement} sideButton
