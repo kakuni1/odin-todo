@@ -54,25 +54,23 @@ h6 {
 }
 
 body {
-	display: grid;
+	display: flex;
 	min-height: 100vh;
 	font-family: system-ui, -apple-system, sans-serif;
 	overflow: clip;
 }
 
 #main {
-	position: relative;
-	z-index: 0;
+	flex: 1;
 	background-color: #0f131a;
 }
 
 #sidebar {
-	position: absolute;
-	z-index: 1;
+	flex-shrink: 0;
 	background-color: #1c212c;
 	width: var(--sidebar-width);
-	height: 100%;
-	transition: transform 0.125s ease;
+	height: 100vh;
+	transition: width 0.125s ease;
 	overflow: hidden;
 }
 
@@ -116,7 +114,7 @@ body {
 }
 
 #sidebar[data-sidebar="hide"] {
-	transform: translateX(-100%);
+	width: 0;
 }
 
 li {

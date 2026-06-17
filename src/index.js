@@ -6,7 +6,7 @@ const mainArea = createMain();
 const sideArea = createSidebar();
 const sideButton = createSidebarButton();
 
-document.body.appendChild(mainArea);
 document.body.appendChild(sideArea);
+document.body.appendChild(mainArea);
 document.body.appendChild(sideButton);
 initEvents(sideButton, sideArea);
