@@ -108,6 +108,16 @@ body {
 	transform: scale(0.9);
 }
 
+#side-content {
+	width: var(--sidebar-width);
+	transition: width 0.125s ease;
+	overflow: hidden;
+}
+
+#sidebar[data-sidebar="hide"] #side-content {
+	width: 0;
+}
+
 #sidebar[data-sidebar="hide"] {
 	width: 0;
 }
