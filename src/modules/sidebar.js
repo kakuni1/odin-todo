@@ -41,6 +41,7 @@ export function createSidebar() {
 export function sideButtonSwap(sideArea, sideButton) {
 	const sideState = sideArea.dataset.sidebar === "show" ? "hide" : "show";
 	sideArea.dataset.sidebar = sideState;
+	localStorage.setItem("sidebar-state", sideState);
 	sideButton.innerHTML = getIcon(`icon-sidebar-${sideState}`);
 	sideButton.setAttribute(
 		"aria-label",
