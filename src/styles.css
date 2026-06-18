@@ -139,4 +139,5 @@ li {
 #sidebar li svg {
 	width: 25px;
 	height: 25px;
+	padding-bottom: 2px;
 }
