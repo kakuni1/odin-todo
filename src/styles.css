@@ -42,7 +42,7 @@ h6 {
 /* END CSS RESET */
 
 :root {
-	--sidebar-width: 500px;
+	--sidebar-width: 300px;
 }
 
 @font-face {
@@ -127,8 +127,15 @@ li {
 	display: flex;
 	align-items: center;
 	list-style: none;
+	width: calc(var(--sidebar-width) - 35%);
+	border-radius: 5px;
 	color: #bfbdb6;
 	gap: 10px;
+}
+
+li:hover {
+	background: rgba(255, 255, 255, 0.15);
+	cursor: pointer;
 }
 
 .list-item {
