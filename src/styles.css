@@ -78,7 +78,7 @@ body {
 	font-family: "WDXL", system-ui, -apple-system, sans-serif;
 	font-size: 1.45rem;
 	width: fit-content;
-	padding-top: 10px;
+	padding-top: 15px;
 	padding-left: 20px;
 	color: #bfbdb6;
 }
@@ -127,7 +127,12 @@ li {
 	align-items: center;
 	list-style: none;
 	color: #bfbdb6;
-	gap: 8px;
+	gap: 10px;
+}
+
+.list-item {
+	font-size: 1.075rem;
+	font-family: "WDXL", system-ui, -apple-system, sans-serif;
 }
 
 #sidebar li svg {
