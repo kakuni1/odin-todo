@@ -129,13 +129,37 @@ li {
 	list-style: none;
 	width: calc(var(--sidebar-width) - 35%);
 	border-radius: 5px;
+	padding: 2px 8px;
 	color: #bfbdb6;
 	gap: 10px;
+}
+
+li > :last-child:nth-child(3) {
+	margin-left: auto;
+	opacity: 0;
+}
+
+#sidebar li > :last-child:nth-child(3) {
+	width: 20px;
+	height: 20px;
 }
 
 li:hover {
 	background: rgba(255, 255, 255, 0.15);
 	cursor: pointer;
+}
+
+li:hover :last-child:nth-child(3) {
+	opacity: 0.9;
+}
+
+#sidebar li > :last-child:nth-child(3):hover {
+	color: #f26d78;
+}
+
+#sidebar li > :last-child:nth-child(3):active {
+	transform: scale(0.9);
+	opacity: 1;
 }
 
 .list-item {
