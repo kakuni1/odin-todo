@@ -17,6 +17,7 @@ export function createSidebar() {
 	tasks.textContent = "Tasks";
 	const tasksList = document.createElement("ul");
 	tasksList.appendChild(createListItem("icon-calendar-today", "Today"));
+	tasksList.appendChild(createListItem("icon-calendar-week", "This week"));
 
 	const projects = document.createElement("h2");
 	projects.textContent = "Projects";
