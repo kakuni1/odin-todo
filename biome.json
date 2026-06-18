@@ -7,7 +7,7 @@
 	},
 	"files": {
 		"ignoreUnknown": true,
-		"includes": ["src/**/*", "*.json", "!src/vendor"]
+		"includes": ["src/**/*.{js,ts,json,css,html}", "*.json", "!src/vendor"]
 	},
 	"formatter": {
 		"enabled": true,
@@ -15,7 +15,7 @@
 	},
 	"linter": {
 		"enabled": true,
-		"includes": ["src/**/*"],
+		"includes": ["src/**/*.{js,ts,json,css,html}"],
 		"rules": {
 			"recommended": true
 		}
@@ -27,7 +27,7 @@
 	},
 	"assist": {
 		"enabled": true,
-		"includes": ["src/**/*"],
+		"includes": ["src/**/*.{js,ts,json,css,html}"],
 		"actions": {
 			"source": {
 				"organizeImports": "on"
