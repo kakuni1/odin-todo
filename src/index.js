@@ -1,12 +1,10 @@
 import { initEvents } from "./modules/events.js";
 import { createMain } from "./modules/main.js";
-import { createSidebar, createSidebarButton } from "./modules/sidebar.js";
+import { createSidebar } from "./modules/sidebar.js";
 
-const mainArea = createMain();
-const sideArea = createSidebar();
-const sideButton = createSidebarButton();
+const main = createMain();
+const { side, button } = createSidebar();
 
-document.body.appendChild(sideArea);
-document.body.appendChild(mainArea);
-document.body.appendChild(sideButton);
-initEvents(sideButton, sideArea);
+document.body.appendChild(side);
+document.body.appendChild(main);
+initEvents(button, side);
