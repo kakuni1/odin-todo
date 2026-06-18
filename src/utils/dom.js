@@ -12,6 +12,13 @@ export function createListItem(iconFront, iconEnd, label) {
 	span.className = "list-item";
 	span.textContent = label;
 	li.appendChild(span);
-	if (iconEnd) li.insertAdjacentHTML("beforeend", getIcon(iconEnd));
+	if (iconEnd) {
+		const button = document.createElement("button");
+		button.className = "list-item-action";
+		button.setAttribute("aria-label", `Remove ${label}`);
+		button.setAttribute("aria-haspopup", "dialog");
+		button.innerHTML = getIcon(iconEnd);
+		li.appendChild(button);
+	}
 	return li;
 }

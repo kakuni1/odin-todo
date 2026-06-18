@@ -134,14 +134,18 @@ li {
 	gap: 10px;
 }
 
-li > :last-child:nth-child(3) {
-	margin-left: auto;
-	opacity: 0;
+.list-item-action {
+	display: flex;
+	align-items: center;
+	border: none;
+	background: transparent;
+	cursor: pointer;
 }
 
-#sidebar li > :last-child:nth-child(3) {
-	width: 20px;
-	height: 20px;
+li > .list-item-action {
+	color: inherit;
+	margin-left: auto;
+	opacity: 0;
 }
 
 li:hover {
@@ -149,15 +153,15 @@ li:hover {
 	cursor: pointer;
 }
 
-li:hover :last-child:nth-child(3) {
+li:hover .list-item-action {
 	opacity: 0.9;
 }
 
-#sidebar li > :last-child:nth-child(3):hover {
+#sidebar li > .list-item-action:hover {
 	color: #f26d78;
 }
 
-#sidebar li > :last-child:nth-child(3):active {
+#sidebar li > .list-item-action:active {
 	transform: scale(0.9);
 	opacity: 1;
 }
@@ -171,4 +175,10 @@ li:hover :last-child:nth-child(3) {
 	width: 25px;
 	height: 25px;
 	padding-bottom: 2px;
+}
+
+#sidebar li > .list-item-action svg {
+	padding-top: 2px;
+	width: 20px;
+	height: 20px;
 }
