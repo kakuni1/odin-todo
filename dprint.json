@@ -1,0 +1,11 @@
+{
+  "$schema": "https://dprint.dev/schemas/v0.json",
+  "excludes": ["src/vendor/**", "node_modules/**"],
+  "markup": {
+    "associations": ["**/*.svg"]
+  },
+  "plugins": [
+    "https://plugins.dprint.dev/g-plane/markup_fmt-v0.27.3.wasm",
+    "https://plugins.dprint.dev/g-plane/pretty_yaml-v0.6.0.wasm"
+  ]
+}
