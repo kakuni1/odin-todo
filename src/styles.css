@@ -1,16 +1,16 @@
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 * {
-	margin: 0;
+  margin: 0;
 }
 
 body {
-	line-height: 1.5;
-	-webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
 img,
@@ -18,15 +18,15 @@ picture,
 video,
 canvas,
 svg {
-	display: block;
-	max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
 input,
 button,
 textarea,
 select {
-	font: inherit;
+  font: inherit;
 }
 
 p,
@@ -36,149 +36,149 @@ h3,
 h4,
 h5,
 h6 {
-	overflow-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* END CSS RESET */
 
 :root {
-	--sidebar-width: 300px;
+  --sidebar-width: 300px;
 }
 
 @font-face {
-	font-family: "WDXL";
-	src: url("./assets/WDXL-Regular.woff2") format("woff2");
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
+  font-family: "WDXL";
+  src: url("./assets/WDXL-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 body {
-	display: flex;
-	min-height: 100vh;
-	font-family: system-ui, -apple-system, sans-serif;
-	overflow: clip;
+  display: flex;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, sans-serif;
+  overflow: clip;
 }
 
 #main {
-	flex: 1;
-	background-color: #0f131a;
+  flex: 1;
+  background-color: #0f131a;
 }
 
 #sidebar {
-	position: relative;
-	flex-shrink: 0;
-	background-color: #1c212c;
-	width: var(--sidebar-width);
-	height: 100vh;
-	transition: width 0.125s ease;
+  position: relative;
+  flex-shrink: 0;
+  background-color: #1c212c;
+  width: var(--sidebar-width);
+  height: 100vh;
+  transition: width 0.125s ease;
 }
 
 #sidebar h2 {
-	font-family: "WDXL", system-ui, -apple-system, sans-serif;
-	font-size: 1.45rem;
-	width: fit-content;
-	padding-top: 15px;
-	padding-left: 20px;
-	padding-bottom: 5px;
-	color: #bfbdb6;
+  font-family: "WDXL", system-ui, -apple-system, sans-serif;
+  font-size: 1.45rem;
+  width: fit-content;
+  padding-top: 15px;
+  padding-left: 20px;
+  padding-bottom: 5px;
+  color: #bfbdb6;
 }
 
 .button-sidebar {
-	position: absolute;
-	z-index: 2;
-	color: #bfbdb6;
-	background: transparent;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	top: 10px;
-	right: -45px;
+  position: absolute;
+  z-index: 2;
+  color: #bfbdb6;
+  background: transparent;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  top: 10px;
+  right: -45px;
 }
 
 .button-sidebar svg {
-	width: 25px;
-	height: 25px;
+  width: 25px;
+  height: 25px;
 }
 
 .button-sidebar:hover {
-	background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .button-sidebar:active {
-	transform: scale(0.9);
+  transform: scale(0.9);
 }
 
 #side-content {
-	width: var(--sidebar-width);
-	transition: width 0.125s ease;
-	overflow: hidden;
+  width: var(--sidebar-width);
+  transition: width 0.125s ease;
+  overflow: hidden;
 }
 
 #sidebar[data-sidebar="hide"] #side-content {
-	width: 0;
+  width: 0;
 }
 
 #sidebar[data-sidebar="hide"] {
-	width: 0;
+  width: 0;
 }
 
 li {
-	display: flex;
-	align-items: center;
-	list-style: none;
-	width: calc(var(--sidebar-width) - 35%);
-	border-radius: 5px;
-	padding: 2px 8px;
-	color: #bfbdb6;
-	gap: 10px;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  width: calc(var(--sidebar-width) - 35%);
+  border-radius: 5px;
+  padding: 2px 8px;
+  color: #bfbdb6;
+  gap: 10px;
 }
 
 .list-item-action {
-	display: flex;
-	align-items: center;
-	border: none;
-	background: transparent;
-	cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
 
 li > .list-item-action {
-	color: inherit;
-	margin-left: auto;
-	opacity: 0;
+  color: inherit;
+  margin-left: auto;
+  opacity: 0;
 }
 
 li:hover {
-	background: rgba(255, 255, 255, 0.15);
-	cursor: pointer;
+  background: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
 }
 
 li:hover .list-item-action {
-	opacity: 0.9;
+  opacity: 0.9;
 }
 
 #sidebar li > .list-item-action:hover {
-	color: #f26d78;
+  color: #f26d78;
 }
 
 #sidebar li > .list-item-action:active {
-	transform: scale(0.9);
-	opacity: 1;
+  transform: scale(0.9);
+  opacity: 1;
 }
 
 .list-item {
-	font-size: 1.075rem;
-	font-family: "WDXL", system-ui, -apple-system, sans-serif;
+  font-size: 1.075rem;
+  font-family: "WDXL", system-ui, -apple-system, sans-serif;
 }
 
 #sidebar li svg {
-	width: 25px;
-	height: 25px;
-	padding-bottom: 2px;
+  width: 25px;
+  height: 25px;
+  padding-bottom: 2px;
 }
 
 #sidebar li > .list-item-action {
-	padding-top: 2px;
-	min-width: 20px;
-	min-height: 20px;
+  padding-top: 2px;
+  min-width: 20px;
+  min-height: 20px;
 }
