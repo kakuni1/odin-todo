@@ -15,6 +15,7 @@ export function createListItem(iconFront, iconEnd, label) {
 	if (iconEnd) {
 		const button = document.createElement("button");
 		button.className = "list-item-action";
+		button.dataset.project = label;
 		button.setAttribute("aria-label", `Remove ${label}`);
 		button.setAttribute("aria-haspopup", "dialog");
 		button.innerHTML = getIcon(iconEnd);
