@@ -14,24 +14,20 @@ export function createModal(title) {
   return overlay;
 }
 
-// pass in sidebar to enable/disable
-// when modal is active/inactive
 /**
  * @param {HTMLDivElement} overlay
- * @param {HTMLElement} sidebar
  */
-export function openModal(overlay, sidebar) {
+export function openModal(overlay) {
   overlay.classList.add("active");
-  overlay.setAttribute("aria-hidden", "false");
-  sidebar.inert = true;
+  document.getElementById("sidebar").inert = true;
+  document.getElementById("main").inert = true;
 }
 
 /**
  * @param {HTMLDivElement} overlay
- * @param {HTMLElement} sidebar
  */
-export function closeModal(overlay, sidebar) {
+export function closeModal(overlay) {
   overlay.classList.remove("active");
-  overlay.setAttribute("aria-hidden", "true");
-  sidebar.inert = false;
+  document.getElementById("sidebar").inert = false;
+  document.getElementById("main").inert = false;
 }
