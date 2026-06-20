@@ -182,3 +182,26 @@ li:hover .list-item-action {
   min-width: 20px;
   min-height: 20px;
 }
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.625);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-box {
+  display: flex;
+  background: white;
+  border-radius: 5px;
+  min-width: 300px;
+  min-height: 150px;
+  align-items: center;
+  justify-content: center;
+}
