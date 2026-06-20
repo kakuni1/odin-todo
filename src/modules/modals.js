@@ -1,3 +1,5 @@
+import { getIcon } from "./icons.js";
+
 /**
  * @param {string} title
  * @returns {HTMLDivElement}
@@ -9,7 +11,10 @@ export function createModal(title) {
   modal.className = "modal-box";
   const h2 = document.createElement("h2");
   h2.textContent = title;
-  modal.appendChild(h2);
+  const button = document.createElement("button");
+  button.className = "modal-close-button";
+  button.innerHTML = getIcon("icon-close");
+  modal.append(h2, button);
   overlay.appendChild(modal);
   return overlay;
 }

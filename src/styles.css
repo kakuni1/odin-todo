@@ -172,8 +172,8 @@ li:hover .list-item-action {
 }
 
 #sidebar li svg {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   padding-bottom: 2px;
 }
 
@@ -201,11 +201,35 @@ li:hover .list-item-action {
 }
 
 .modal-box {
-  display: flex;
-  background: white;
+  position: relative;
+  color: #0f131a;
+  background-color: #bfbdb6;
+  opacity: 0.9;
   border-radius: 5px;
   min-width: 300px;
   min-height: 150px;
-  align-items: center;
-  justify-content: center;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 5px;
+  right: 2px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-close-button:hover {
+  color: #e6495a;
+  opacity: 1;
+}
+
+.modal-close-button:active {
+  transform: scale(0.9);
+  opacity: 1;
+}
+
+.modal-close-button svg {
+  width: 20px;
+  height: 20px;
 }
