@@ -4,9 +4,10 @@ import { getIcon } from "./icons.js";
  * @param {string} iconFront
  * @param {string} iconEnd
  * @param {string} label
+ * @param {{ buttonId?: string }} options
  * @returns {HTMLLIElement}
  */
-export function createListItem(iconFront, iconEnd, label) {
+export function createListItem(iconFront, iconEnd, label, options = {}) {
   const li = document.createElement("li");
   li.innerHTML = getIcon(iconFront);
   const span = document.createElement("span");
@@ -15,9 +16,9 @@ export function createListItem(iconFront, iconEnd, label) {
   li.appendChild(span);
   if (iconEnd) {
     const button = document.createElement("button");
+    if (options.buttonId) button.id = options.buttonId;
     button.className = "list-item-action";
     button.dataset.project = label;
-    button.setAttribute("aria-label", `Remove ${label}`);
     button.setAttribute("aria-haspopup", "dialog");
     button.innerHTML = getIcon(iconEnd);
     li.appendChild(button);

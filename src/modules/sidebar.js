@@ -27,8 +27,9 @@ export function createSidebar() {
   const projects = document.createElement("h2");
   projects.textContent = "Projects";
   const projectsList = document.createElement("ul");
-  projectsList.appendChild(createListItem("icon-folder", "icon-close", "Main"));
-
+  projectsList.appendChild(
+    createListItem("icon-folder", "icon-close", "Main", { buttonId: "remove-folder" }),
+  );
   const sideContent = document.createElement("div");
   sideContent.id = "side-content";
   sideContent.append(tasks, tasksList, projects, projectsList);
