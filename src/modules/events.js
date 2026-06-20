@@ -18,6 +18,13 @@ export function initSidebar(sideButton, sideArea) {
       const overlay = createModal(`Remove Project: ${projectName}`);
       document.body.appendChild(overlay);
       openModal(overlay);
+      // click outside modal box (overlay) -> close modal
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) {
+          closeModal(overlay);
+          overlay.remove();
+        }
+      });
       // click on close modal icon -> close modal
       const close = overlay.getElementsByClassName("modal-close-button");
       close[0].addEventListener("click", () => {
