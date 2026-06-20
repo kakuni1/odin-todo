@@ -13,4 +13,4 @@ initEvents(button, side);
 loadSavedData(side, button);
 const overlay = createModal("hello");
 document.body.appendChild(overlay);
-openModal(overlay);
+openModal(overlay, side);
