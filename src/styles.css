@@ -183,6 +183,9 @@ li:hover .list-item-action {
   min-height: 20px;
 }
 
+/* modal hidden by default */
+/* turned on by display: none -> flex */ 
+
 .modal-overlay {
   display: none;
   position: fixed;
