@@ -1,5 +1,5 @@
-import { createListItem } from "../utils/dom.js";
-import { createButton, getIcon } from "../utils/icons.js";
+import { createListItem } from "./dom.js";
+import { createButton, getIcon } from "./icons.js";
 
 export function createSidebar() {
   const side = document.createElement("div");

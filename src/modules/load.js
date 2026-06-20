@@ -1,4 +1,4 @@
-import { getIcon } from "../utils/icons.js";
+import { getIcon } from "./icons.js";
 
 export function loadSavedData(side, button) {
   // no saved data -> default to "show"
