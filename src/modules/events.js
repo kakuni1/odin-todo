@@ -10,41 +10,42 @@ export function initSidebar(sideButton, sideArea) {
   sideButton.addEventListener("click", () => {
     sideButtonSwap(sideArea, sideButton);
   });
-  const button = document.getElementById("remove-folder");
-  if (button) {
-    // click on close button (delete folder) -> confirmation modal
-    button.addEventListener("click", () => {
-      const projectName = document.getElementById("remove-folder").dataset.project;
-      const overlay = createModal(`Remove Project: ${projectName}`);
-      document.body.appendChild(overlay);
-      openModal(overlay);
-      // click outside modal box (overlay) -> close modal
-      overlay.addEventListener("click", (e) => {
-        if (e.target === overlay) {
-          closeModal(overlay);
-          overlay.remove();
-        }
-      });
-      // escape key press -> close modal
-      // define function
-      /**
-       * @param {KeyboardEvent} press
-       */
-      const pressEscape = (press) => {
-        if (press.key === "Escape") {
-          closeModal(overlay);
-          overlay.remove();
-          document.removeEventListener("keydown", pressEscape);
-        }
-      };
-      // activate function
-      document.addEventListener("keydown", pressEscape);
-      // click on close modal icon -> close modal
-      const close = overlay.getElementsByClassName("modal-close-button");
-      close[0].addEventListener("click", () => {
-        closeModal(overlay);
-        overlay.remove();
-      });
+  // click on project list item -> confirmation modal
+  document.getElementById("project-list").addEventListener("click", projectClick);
+  /**
+   * @param {MouseEvent & { target: Element }} click
+   */
+  function projectClick(click) {
+    const item = click.target.closest("#project-list > li");
+    // no item -> exit
+    if (!item) return;
+    // folder click -> create modal
+    const projectName = item.querySelector(".list-item").textContent;
+    const overlay = createModal(`Project: ${projectName}`);
+    document.body.appendChild(overlay);
+    openModal(overlay);
+
+    const cleanup = () => {
+      closeModal(overlay);
+      overlay.remove();
+      document.removeEventListener("keydown", pressEscape);
+    };
+
+    // click outside modal box (overlay) -> close modal
+    overlay.addEventListener("click", (event) => {
+      if (event.target === overlay) cleanup();
     });
+
+    // escape key press -> close modal
+    /**
+     * @param {KeyboardEvent} press
+     */
+    const pressEscape = (press) => {
+      if (press.key === "Escape") cleanup();
+    };
+    document.addEventListener("keydown", pressEscape);
+
+    // click on close modal icon -> close modal
+    overlay.querySelector(".modal-close-button").addEventListener("click", cleanup);
   }
 }

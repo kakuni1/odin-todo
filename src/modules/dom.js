@@ -1,27 +1,16 @@
 import { getIcon } from "./icons.js";
 
 /**
- * @param {string} iconFront
- * @param {string} iconEnd
+ * @param {string} icon
  * @param {string} label
- * @param {{ buttonId?: string }} options
  * @returns {HTMLLIElement}
  */
-export function createListItem(iconFront, iconEnd, label, options = {}) {
+export function createListItem(icon, label) {
   const li = document.createElement("li");
-  li.innerHTML = getIcon(iconFront);
+  li.innerHTML = getIcon(icon);
   const span = document.createElement("span");
   span.className = "list-item";
   span.textContent = label;
   li.appendChild(span);
-  if (iconEnd) {
-    const button = document.createElement("button");
-    if (options.buttonId) button.id = options.buttonId;
-    button.className = "list-item-action";
-    button.dataset.project = label;
-    button.setAttribute("aria-haspopup", "dialog");
-    button.innerHTML = getIcon(iconEnd);
-    li.appendChild(button);
-  }
   return li;
 }

@@ -19,17 +19,17 @@ export function createSidebar() {
   const tasks = document.createElement("h2");
   tasks.textContent = "Tasks";
   const tasksList = document.createElement("ul");
-  tasksList.appendChild(createListItem("icon-calendar-today", "", "Today"));
-  tasksList.appendChild(createListItem("icon-calendar-week", "", "This week"));
-  tasksList.appendChild(createListItem("icon-planned", "", "Planned"));
-  tasksList.appendChild(createListItem("icon-complete", "", "Complete"));
+  tasksList.id = "task-list";
+  tasksList.appendChild(createListItem("icon-calendar-today", "Today"));
+  tasksList.appendChild(createListItem("icon-calendar-week", "This week"));
+  tasksList.appendChild(createListItem("icon-planned", "Planned"));
+  tasksList.appendChild(createListItem("icon-complete", "Complete"));
 
   const projects = document.createElement("h2");
   projects.textContent = "Projects";
   const projectsList = document.createElement("ul");
-  projectsList.appendChild(
-    createListItem("icon-folder", "icon-close", "Main", { buttonId: "remove-folder" }),
-  );
+  projectsList.id = "project-list";
+  projectsList.appendChild(createListItem("icon-folder", "Main"));
   const sideContent = document.createElement("div");
   sideContent.id = "side-content";
   sideContent.append(tasks, tasksList, projects, projectsList);
