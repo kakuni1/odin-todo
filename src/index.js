@@ -5,8 +5,6 @@ import { createSidebar } from "./modules/sidebar.js";
 
 const main = createMain();
 const { side, button } = createSidebar();
-
-document.body.appendChild(side);
-document.body.appendChild(main);
+document.body.append(side, main);
 initSidebar(button, side);
 loadSavedData(side, button);
