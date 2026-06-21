@@ -1,3 +1,4 @@
+import { loadContent } from "./database.js";
 import { createListItem } from "./dom.js";
 import { createButton, getIcon } from "./icons.js";
 
@@ -16,24 +17,26 @@ export function createSidebar() {
   button.setAttribute("aria-controls", "sidebar");
   createButton(button, "icon-sidebar-hide");
 
-  const tasks = document.createElement("h2");
-  tasks.textContent = "Tasks";
-  const tasksList = document.createElement("ul");
-  tasksList.id = "task-list";
-  tasksList.appendChild(createListItem("icon-calendar-today", "Today"));
-  tasksList.appendChild(createListItem("icon-calendar-week", "This week"));
-  tasksList.appendChild(createListItem("icon-planned", "Planned"));
-  tasksList.appendChild(createListItem("icon-complete", "Complete"));
+  const items = loadContent();
+  // Set to grab unique parent (Tasks, Projects)
+  // wrap in [] to convert it back to an array
+  const sections = [...new Set(items.map((item) => item.parent))];
 
-  const projects = document.createElement("h2");
-  projects.textContent = "Projects";
-  const projectsList = document.createElement("ul");
-  projectsList.id = "project-list";
-  projectsList.appendChild(createListItem("icon-folder", "Main"));
   const sideContent = document.createElement("div");
   sideContent.id = "side-content";
-  sideContent.append(tasks, tasksList, projects, projectsList);
 
+  // build out the sections (Tasks, Projects)
+  for (const section of sections) {
+    const h2 = document.createElement("h2");
+    h2.textContent = section;
+    const list = document.createElement("ul");
+    list.id = `${section.toLowerCase()}-list`;
+    // build out the items (Today, This week, etc.)
+    for (const item of items) {
+      if (item.parent === section) list.appendChild(createListItem(item.icon, item.name));
+      sideContent.append(h2, list);
+    }
+  }
   side.append(button, sideContent);
   return { button, side };
 }
