@@ -25,6 +25,20 @@ export function initSidebar(sideButton, sideArea) {
           overlay.remove();
         }
       });
+      // escape key press -> close modal
+      // define function
+      /**
+       * @param {KeyboardEvent} press
+       */
+      const pressEscape = (press) => {
+        if (press.key === "Escape") {
+          closeModal(overlay);
+          overlay.remove();
+          document.removeEventListener("keydown", pressEscape);
+        }
+      };
+      // activate function
+      document.addEventListener("keydown", pressEscape);
       // click on close modal icon -> close modal
       const close = overlay.getElementsByClassName("modal-close-button");
       close[0].addEventListener("click", () => {
