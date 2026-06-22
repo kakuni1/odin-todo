@@ -1,10 +1,6 @@
 import { closeModal, createModal, openModal } from "./modals.js";
 import { sideButtonSwap } from "./sidebar.js";
 
-/**
- * @param {HTMLButtonElement} sideButton
- * @param {HTMLElement} sideArea
- */
 export function initSidebar(sideButton, sideArea) {
   // click on sidebar button -> hide/show sidebar
   sideButton.addEventListener("click", () => {

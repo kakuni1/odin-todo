@@ -1,10 +1,12 @@
 import { getIcon } from "./icons.js";
 
-/**
- * @param {string} title
- * @returns {HTMLDivElement}
- */
-export function createModal(title) {
+
+
+ 
+export function createModal(title, options = {}) {
+  // options to create a modal with text entry fields
+  const { input = false, value = "", placeholder = "", submitLabel = "Submit" } = options;
+
   const overlay = document.createElement("div");
   overlay.className = "modal-overlay";
   const modal = document.createElement("div");
@@ -19,9 +21,6 @@ export function createModal(title) {
   return overlay;
 }
 
-/**
- * @param {HTMLDivElement} overlay
- */
 export function openModal(overlay) {
   overlay.classList.add("active");
   document.getElementById("sidebar").inert = true;

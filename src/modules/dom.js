@@ -1,10 +1,5 @@
 import { getIcon } from "./icons.js";
 
-/**
- * @param {string} icon
- * @param {string} label
- * @returns {HTMLLIElement}
- */
 export function createListItem(icon, label) {
   const li = document.createElement("li");
   li.innerHTML = getIcon(icon);

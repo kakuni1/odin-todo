@@ -2,9 +2,6 @@ import { loadContent } from "./database.js";
 import { createListItem } from "./dom.js";
 import { createButton, getIcon } from "./icons.js";
 
-/**
- * @returns {{ button: HTMLButtonElement, side: HTMLElement }}
- */
 export function createSidebar() {
   const side = document.createElement("div");
   side.id = "sidebar";
@@ -41,10 +38,6 @@ export function createSidebar() {
   return { button, side };
 }
 
-/**
- * @param {HTMLElement} sideArea
- * @param {HTMLButtonElement} sideButton
- */
 export function sideButtonSwap(sideArea, sideButton) {
   const sideState = sideArea.dataset.sidebar === "show" ? "hide" : "show";
   sideArea.dataset.sidebar = sideState;
