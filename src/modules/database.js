@@ -4,7 +4,7 @@ const defaultState = [
   { parent: "Tasks", icon: "icon-calendar-week", name: "This week" },
   { parent: "Tasks", icon: "icon-planned", name: "Planned" },
   { parent: "Tasks", icon: "icon-complete", name: "Complete" },
-  { parent: "Projects", icon: "icon-folder", name: "Main" },
+  { parent: "Projects", icon: "icon-folder", name: "Default" },
 ];
 
 export function loadContent() {
