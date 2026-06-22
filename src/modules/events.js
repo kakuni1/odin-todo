@@ -8,9 +8,6 @@ export function initSidebar(sideButton, sideArea) {
   });
   // click on project list item -> confirmation modal
   document.getElementById("projects-list").addEventListener("click", projectClick);
-  /**
-   * @param {MouseEvent & { target: Element }} click
-   */
   function projectClick(click) {
     const item = click.target.closest("#projects-list > li");
     // no item -> exit
