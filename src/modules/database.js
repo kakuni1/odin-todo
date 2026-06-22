@@ -8,11 +8,18 @@ const defaultState = [
 ];
 
 export function loadContent() {
-  // load default if no localStorage
   try {
-    return JSON.parse(localStorage.getItem("folders")) ?? defaultState;
-    // load default if localStorage data is invalid
+    const data = localStorage.getItem("folders");
+    // load defaults if fresh session
+    if (data === null) {
+      localStorage.setItem("folders", JSON.stringify(defaultState));
+      return defaultState;
+    }
+    // load saved data if prior session
+    return JSON.parse(data);
   } catch {
+    // load defaults if prior session data is invalid
+    localStorage.setItem("folders", JSON.stringify(defaultState));
     return defaultState;
   }
 }
