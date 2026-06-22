@@ -30,9 +30,6 @@ export function initSidebar(sideButton, sideArea) {
     });
 
     // escape key press -> close modal
-    /**
-     * @param {KeyboardEvent} press
-     */
     const pressEscape = (press) => {
       if (press.key === "Escape") cleanup();
     };
