@@ -9,11 +9,11 @@ run = "serve --no-clipboard src/"
 
 [tasks.fmt]
 description = "Auto-format source files"
-run = "biome check --write ."
+run = "biome check --write . && dprint fmt \"**/*.svg\" \"**/*.{yml,yaml}\""
 
 [tasks.fmt-check]
 description = "Check formatting only"
-run = "biome ci ."
+run = "biome ci . && dprint check \"**/*.svg\" \"**/*.{yml,yaml}\""
 
 [tasks.lint]
 description = "Lint source files"
