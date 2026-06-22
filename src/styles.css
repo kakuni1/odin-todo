@@ -184,7 +184,7 @@ li:hover .list-item-action {
 }
 
 /* modal hidden by default */
-/* turned on by display: none -> flex */ 
+/* turned on by display: none -> flex */
 
 .modal-overlay {
   display: none;
