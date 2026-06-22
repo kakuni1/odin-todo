@@ -1,8 +1,5 @@
 import { getIcon } from "./icons.js";
 
-
-
- 
 export function createModal(title, options = {}) {
   // options to create a modal with text entry fields
   const { input = false, value = "", placeholder = "", submitLabel = "Submit" } = options;
@@ -27,9 +24,6 @@ export function openModal(overlay) {
   document.getElementById("main").inert = true;
 }
 
-/**
- * @param {HTMLDivElement} overlay
- */
 export function closeModal(overlay) {
   overlay.classList.remove("active");
   document.getElementById("sidebar").inert = false;
