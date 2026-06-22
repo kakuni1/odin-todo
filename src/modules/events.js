@@ -3,9 +3,7 @@ import { sideButtonSwap } from "./sidebar.js";
 
 export function initSidebar(sideButton, sideArea) {
   // click on sidebar button -> hide/show sidebar
-  sideButton.addEventListener("click", () => {
-    sideButtonSwap(sideArea, sideButton);
-  });
+  initSideSwap(sideButton, sideArea);
   // click on project list item -> confirmation modal
   document.getElementById("projects-list").addEventListener("click", projectClick);
   function projectClick(click) {
@@ -38,4 +36,10 @@ export function initSidebar(sideButton, sideArea) {
     // click on close modal icon -> close modal
     overlay.querySelector(".modal-close-button").addEventListener("click", cleanup);
   }
+}
+
+export function initSideSwap(sideButton, sideArea) {
+  sideButton.addEventListener("click", () => {
+    sideButtonSwap(sideArea, sideButton);
+  });
 }
