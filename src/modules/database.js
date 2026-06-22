@@ -7,9 +7,6 @@ const defaultState = [
   { parent: "Projects", icon: "icon-folder", name: "Main" },
 ];
 
-/**
- * @returns {Array<{ parent: string, icon: string, name: string }>}
- */
 export function loadContent() {
   // load default if no localStorage
   try {
