@@ -1,9 +1,6 @@
 import { getIcon } from "./icons.js";
 
-export function createModal(title, options = {}) {
-  // options to create a modal with text entry fields
-  const { input = false, value = "", placeholder = "", submitLabel = "Submit" } = options;
-
+export function createModal(title) {
   const overlay = document.createElement("div");
   overlay.className = "modal-overlay";
   const modal = document.createElement("div");
