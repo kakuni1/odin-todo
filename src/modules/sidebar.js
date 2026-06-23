@@ -32,13 +32,25 @@ export function createSidebar() {
     // build out the items (Today, This week, etc.)
     for (const item of items) {
       if (item.parent === section) list.appendChild(createListItem(item.icon, item.name));
-      sideContent.append(h2, list);
     }
+
+    const header = document.createElement("div");
+    header.id = "header-section";
+    header.append(h2);
+
+    if (section === "Projects") {
+      const buttonAdd = document.createElement("button");
+      createButton(buttonAdd, "icon-plus");
+      buttonAdd.className = "button-plus";
+      buttonAdd.setAttribute("aria-label", "Add project");
+      header.appendChild(buttonAdd);
+      sideContent.append(header, list);
+    }
+    sideContent.append(header, list);
   }
   side.append(button, sideContent);
   return { button, side };
 }
-
 export function sideButtonSwap(sideArea, sideButton) {
   const sideState = sideArea.dataset.sidebar === "show" ? "hide" : "show";
   sideArea.dataset.sidebar = sideState;
