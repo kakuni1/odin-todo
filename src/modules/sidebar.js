@@ -26,6 +26,7 @@ export function createSidebar() {
   for (const section of sections) {
     const h2 = document.createElement("h2");
     h2.textContent = section;
+    h2.id = section.toLowerCase();
     const list = document.createElement("ul");
     list.id = `${section.toLowerCase()}-list`;
     // build out the items (Today, This week, etc.)

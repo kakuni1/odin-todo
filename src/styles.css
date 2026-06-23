@@ -123,6 +123,23 @@ body {
   width: 0;
 }
 
+h2#tasks,
+h2#projects {
+  display: flex;
+  align-items: center;
+  width: calc(var(--sidebar-width) - 20%);
+  border-radius: 5px;
+  margin: 10px 20px;
+  padding: 4px 8px;
+}
+
+li:hover,
+h2#tasks:hover,
+h2#projects:hover {
+  background: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+}
+
 li {
   display: flex;
   align-items: center;
@@ -146,11 +163,6 @@ li > .list-item-action {
   color: inherit;
   margin-left: auto;
   opacity: 0;
-}
-
-li:hover {
-  background: rgba(255, 255, 255, 0.15);
-  cursor: pointer;
 }
 
 li:hover .list-item-action {
