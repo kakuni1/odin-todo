@@ -44,7 +44,6 @@ export function createSidebar() {
       buttonAdd.className = "button-plus";
       buttonAdd.setAttribute("aria-label", "Add project");
       header.appendChild(buttonAdd);
-      sideContent.append(header, list);
     }
     sideContent.append(header, list);
   }
