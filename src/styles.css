@@ -242,7 +242,8 @@ li:hover .list-item-action {
   display: flex;
 }
 
-.modal-box {
+.modal-box,
+.add-modal-box {
   position: relative;
   color: #0f131a;
   background-color: #bfbdb6;

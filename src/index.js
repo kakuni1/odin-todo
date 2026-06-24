@@ -1,4 +1,4 @@
-import { initSideSwap } from "./modules/events.js";
+import { initSidebar } from "./modules/events.js";
 import { loadSavedData } from "./modules/load.js";
 import { createMain } from "./modules/main.js";
 import { createSidebar } from "./modules/sidebar.js";
@@ -6,5 +6,5 @@ import { createSidebar } from "./modules/sidebar.js";
 const main = createMain();
 const { side, button } = createSidebar();
 document.body.append(side, main);
-initSideSwap(button, side);
+initSidebar(button, side, ["Tasks", "Projects"]);
 loadSavedData(side, button);
