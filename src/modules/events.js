@@ -7,34 +7,10 @@ export function initSidebar(sideButton, sideArea, sectionNames) {
   initSideSwap(sideButton, sideArea);
 
   for (const name of sectionNames) {
-    // click on list item -> modal
-    document.getElementById(`${name.toLowerCase()}-list`).addEventListener("click", (click) => {
-      const item = click.target.closest(`#${name.toLowerCase()}-list > li`);
-      // no item -> exit
-      if (!item) return;
-
-      const itemName = item.querySelector(".list-item").textContent;
-      const overlay = createModal(`${name}: ${itemName}`);
-      document.body.appendChild(overlay);
-      openModal(overlay);
-
-      const pressEscape = (press) => {
-        if (press.key === "Escape") cleanup();
-      };
-
-      const cleanup = () => {
-        closeModal(overlay);
-        overlay.remove();
-        document.removeEventListener("keydown", pressEscape);
-      };
-
-      // click outside modal box (overlay) -> close modal
-      overlay.addEventListener("click", (event) => {
-        if (event.target === overlay) cleanup();
-      });
-
-      // click on close modal icon -> close modal
-      overlay.querySelector(".modal-close-button").addEventListener("click", cleanup);
+    const list = sideArea.querySelector(`#${name.toLowerCase()}-list`);
+    list.addEventListener("click", (event) => {
+      const li = event.target.closest("li").textContent;
+      console.log(li);
     });
   }
 
