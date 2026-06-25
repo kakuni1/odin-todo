@@ -4,6 +4,14 @@ export function createMain() {
   return main;
 }
 
+export function closeMain() {
+  const main = document.querySelector("#main");
+  main.replaceChildren();
+  main.dataset.main = "hide";
+  main.setAttribute("aria-expanded", "false");
+  localStorage.setItem("main-state", "hide");
+}
+
 export function sectionClick(folder) {
   const main = document.querySelector("#main");
   const overview = document.createElement("div");
