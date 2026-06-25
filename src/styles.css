@@ -63,6 +63,16 @@ body {
 #main {
   flex: 1;
   background-color: #0f131a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.folder-overview {
+  background-color: #bfbdb6;
+  border-radius: 5px;
+  width: 60%;
+  height: 70%;
 }
 
 #sidebar {
