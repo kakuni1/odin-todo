@@ -1,6 +1,7 @@
 import { loadContent } from "./database.js";
 import { createListItem } from "./dom.js";
-import { closeModal, createModal, createProjectModal, openModal } from "./modals.js";
+import { closeMain, sectionClick } from "./main.js";
+import { closeModal, createProjectModal, openModal } from "./modals.js";
 import { sideButtonSwap } from "./sidebar.js";
 
 export function initSidebar(sideButton, sideArea, sectionNames) {
@@ -9,8 +10,10 @@ export function initSidebar(sideButton, sideArea, sectionNames) {
   for (const name of sectionNames) {
     const list = sideArea.querySelector(`#${name.toLowerCase()}-list`);
     list.addEventListener("click", (event) => {
-      const li = event.target.closest("li").textContent;
-      console.log(li);
+      const li = event.target.closest("li");
+      const label = li.querySelector(".list-item").textContent;
+      const folder = loadContent().find((f) => f.parent === name && f.name === label);
+      if (folder) sectionClick(folder);
     });
   }
 
@@ -73,4 +76,8 @@ export function initSidebar(sideButton, sideArea, sectionNames) {
       sideButtonSwap(sideArea, sideButton);
     });
   }
+}
+
+export function initOverview(button) {
+  button.addEventListener("click", closeMain);
 }

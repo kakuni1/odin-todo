@@ -7,4 +7,4 @@ const main = createMain();
 const { side, button } = createSidebar();
 document.body.append(side, main);
 initSidebar(button, side, ["Tasks", "Projects"]);
-loadSavedData(side, button);
+loadSavedData(main, side, button);

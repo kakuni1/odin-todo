@@ -1,3 +1,6 @@
+import { initOverview } from "./events.js";
+import { createButton } from "./icons.js";
+
 export function createMain() {
   const main = document.createElement("div");
   main.id = "main";
@@ -17,9 +20,20 @@ export function sectionClick(folder) {
   const overview = document.createElement("div");
   overview.className = "folder-overview";
 
+  const headerRow = document.createElement("div");
+  headerRow.className = "overview-header";
+
   const header = document.createElement("h2");
   header.textContent = folder.name;
-  overview.appendChild(header);
+  headerRow.appendChild(header);
+
+  const button = document.createElement("button");
+  button.className = "overview-close-button";
+  button.setAttribute("aria-label", "Close overview");
+  createButton(button, "icon-close");
+  initOverview(button);
+  headerRow.appendChild(button);
+  overview.appendChild(headerRow);
 
   // clear previous
   main.replaceChildren();

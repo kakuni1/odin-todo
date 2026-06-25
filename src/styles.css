@@ -55,6 +55,7 @@ h6 {
 
 body {
   display: flex;
+  background-color: #0f131a;
   min-height: 100vh;
   font-family: system-ui, -apple-system, sans-serif;
   overflow: clip;
@@ -75,8 +76,14 @@ body {
 #main h2 {
   font-family: "WDXL", system-ui, -apple-system, sans-serif;
   font-size: 2rem;
-  text-align: center;
   margin-top: 10px;
+}
+
+.overview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10px;
 }
 
 .folder-overview {
@@ -282,12 +289,14 @@ li:hover .list-item-action {
   cursor: pointer;
 }
 
-.modal-close-button:hover {
+.modal-close-button:hover,
+.overview-close-button:hover {
   color: #e6495a;
   opacity: 1;
 }
 
-.modal-close-button:active {
+.modal-close-button:active,
+.overview-close-button:active {
   transform: scale(0.9);
   opacity: 1;
 }
@@ -295,4 +304,15 @@ li:hover .list-item-action {
 .modal-close-button svg {
   width: 15px;
   height: 15px;
+}
+
+.overview-close-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.overview-close-button svg {
+  width: 25px;
+  height: 25px;
 }
