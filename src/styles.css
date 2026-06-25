@@ -70,9 +70,8 @@ body {
 
 .folder-overview {
   background-color: #bfbdb6;
-  border-radius: 5px;
-  width: 60%;
-  height: 70%;
+  width: 75%;
+  height: 100%;
 }
 
 #sidebar {
