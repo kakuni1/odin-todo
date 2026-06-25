@@ -68,6 +68,17 @@ body {
   justify-content: center;
 }
 
+#main[data-main="hide"] {
+  display: none;
+}
+
+#main h2 {
+  font-family: "WDXL", system-ui, -apple-system, sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
 .folder-overview {
   background-color: #bfbdb6;
   width: 75%;
