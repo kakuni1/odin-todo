@@ -74,6 +74,7 @@ body {
 }
 
 #main h2 {
+  color: #bfbdb6;
   font-family: "WDXL", system-ui, -apple-system, sans-serif;
   font-size: 2rem;
   margin-top: 10px;
@@ -87,7 +88,7 @@ body {
 }
 
 .folder-overview {
-  background-color: #bfbdb6;
+  background-color: #0f131a;
   width: 75%;
   height: 100%;
 }
@@ -307,6 +308,7 @@ li:hover .list-item-action {
 }
 
 .overview-close-button {
+  color: #bfbdb6;
   background: transparent;
   border: none;
   cursor: pointer;
