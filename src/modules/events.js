@@ -27,6 +27,9 @@ export function initSidebar(sideButton, sideArea, sectionNames) {
         }
         return;
       }
+      const label = li.querySelector(".list-item").textContent;
+      const folder = loadContent().find((f) => f.parent === name && f.name === label);
+      if (folder) sectionClick(folder);
     });
   }
 
