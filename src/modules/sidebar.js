@@ -2,7 +2,7 @@ import { loadContent } from "./database.js";
 import { createListItem } from "./dom.js";
 import { createButton, getIcon } from "./icons.js";
 
-export function createSidebar() {
+export function createSidebar(sectionNames) {
   const side = document.createElement("div");
   side.id = "sidebar";
   side.dataset.sidebar = "show";
@@ -15,15 +15,11 @@ export function createSidebar() {
   createButton(button, "icon-sidebar-hide");
 
   const items = loadContent();
-  // Set to grab unique parent (Tasks, Projects)
-  // wrap in [] to convert it back to an array
-  const sections = [...new Set(items.map((item) => item.parent))];
-
   const sideContent = document.createElement("div");
   sideContent.id = "side-content";
 
   // build out the sections (Tasks, Projects)
-  for (const section of sections) {
+  for (const section of sectionNames) {
     const h2 = document.createElement("h2");
     h2.textContent = section;
     h2.id = section.toLowerCase();
