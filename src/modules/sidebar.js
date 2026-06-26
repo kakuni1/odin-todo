@@ -30,8 +30,12 @@ export function createSidebar() {
     const list = document.createElement("ul");
     list.id = `${section.toLowerCase()}-list`;
     // build out the items (Today, This week, etc.)
+    // Projects, extra icon for optional delete
     for (const item of items) {
-      if (item.parent === section) list.appendChild(createListItem(item.icon, item.name));
+      if (item.parent === section)
+        list.appendChild(
+          createListItem(item.icon, item.name, { deletable: section === "Projects" }),
+        );
     }
 
     const header = document.createElement("div");

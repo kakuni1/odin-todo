@@ -11,9 +11,22 @@ export function initSidebar(sideButton, sideArea, sectionNames) {
     const list = sideArea.querySelector(`#${name.toLowerCase()}-list`);
     list.addEventListener("click", (event) => {
       const li = event.target.closest("li");
-      const label = li.querySelector(".list-item").textContent;
-      const folder = loadContent().find((f) => f.parent === name && f.name === label);
-      if (folder) sectionClick(folder);
+
+      const action = event.target.closest(".list-item-action");
+      if (action) {
+        const label = li.querySelector(".list-item").textContent;
+        const folders = loadContent();
+        const idx = folders.findIndex((f) => f.parent === name && f.name === label);
+        // proceed if match found
+        if (idx !== -1) {
+          // remove single entry
+          folders.splice(idx, 1);
+          localStorage.setItem("folders", JSON.stringify(folders));
+          li.remove();
+          if (localStorage.getItem("main-folder") === label) closeMain();
+        }
+        return;
+      }
     });
   }
 
@@ -65,7 +78,7 @@ export function initSidebar(sideButton, sideArea, sectionNames) {
 
       folders.push({ parent: "Projects", icon: "icon-folder", name });
       localStorage.setItem("folders", JSON.stringify(folders));
-      list.appendChild(createListItem("icon-folder", name));
+      list.appendChild(createListItem("icon-folder", name, { deletable: true }));
     });
     // focus input
     overlay.querySelector("input").focus();
