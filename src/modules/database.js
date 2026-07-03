@@ -7,6 +7,8 @@ const defaultState = [
   { parent: "Projects", icon: "icon-folder", name: "Default" },
 ];
 
+const defaultTasks = [];
+
 export function loadContent() {
   try {
     const data = localStorage.getItem("folders");
@@ -22,4 +24,22 @@ export function loadContent() {
     localStorage.setItem("folders", JSON.stringify(defaultState));
     return defaultState;
   }
+}
+
+export function loadTasks() {
+  try {
+    const data = localStorage.getItem("tasks");
+    if (data === null) {
+      localStorage.setItem("tasks", JSON.stringify(defaultTasks));
+      return defaultTasks;
+    }
+    return JSON.parse(data);
+  } catch {
+    localStorage.setItem("tasks", JSON.stringify(defaultTasks));
+    return defaultTasks;
+  }
+}
+
+export function saveTasks(tasks) {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
 }
