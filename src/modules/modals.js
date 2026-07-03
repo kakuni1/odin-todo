@@ -24,10 +24,12 @@ export function createProjectModal(title) {
 
   const h2 = document.createElement("h2");
   h2.textContent = title;
+  h2.className = "modal-title";
 
   const input = document.createElement("input");
   input.type = "text";
   input.placeholder = "Project Name";
+  input.id = "input-project-name";
   input.setAttribute("aria-label", "Project Name");
 
   const buttonConfirm = document.createElement("button");
