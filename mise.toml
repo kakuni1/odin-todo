@@ -1,6 +1,7 @@
 [tools]
 "node" = "lts"
 "biome" = "latest"
+"dprint" = "latest"
 "npm:serve" = "latest"
 
 [tasks.dev]
@@ -9,11 +10,11 @@ run = "serve --no-clipboard src/"
 
 [tasks.fmt]
 description = "Auto-format source files"
-run = "biome check --write . && dprint fmt \"**/*.svg\" \"**/*.{yml,yaml}\""
+run = "biome check --write . && dprint fmt"
 
 [tasks.fmt-check]
 description = "Check formatting only"
-run = "biome ci . && dprint check \"**/*.svg\" \"**/*.{yml,yaml}\""
+run = "biome ci . && dprint check"
 
 [tasks.lint]
 description = "Lint source files"
