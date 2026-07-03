@@ -91,6 +91,7 @@ body {
   background-color: #0f131a;
   width: 75%;
   height: 100%;
+  margin: 0 auto;
 }
 
 #sidebar {
@@ -129,8 +130,11 @@ body {
   height: 25px;
 }
 
-.button-sidebar:hover {
-  background: rgba(255, 255, 255, 0.15);
+.button-sidebar:hover,
+.add-calendar-button:hover,
+.add-submit-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
 }
 
 .button-sidebar:active {
@@ -277,8 +281,8 @@ li:hover .list-item-action {
   background-color: #bfbdb6;
   opacity: 0.9;
   border-radius: 5px;
-  min-width: 300px;
-  min-height: 150px;
+  min-width: 400px;
+  min-height: 200px;
 }
 
 .modal-close-button {
@@ -307,14 +311,167 @@ li:hover .list-item-action {
   height: 15px;
 }
 
-.overview-close-button {
+.overview-close-button,
+.add-calendar-button,
+.add-submit-button,
+.add-date-clear {
   color: #bfbdb6;
   background: transparent;
   border: none;
   cursor: pointer;
 }
 
-.overview-close-button svg {
-  width: 25px;
-  height: 25px;
+.task-item .list-item-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  opacity: 0.9;
+  min-width: 20px;
+  min-height: 20px;
+  cursor: pointer;
+}
+
+.add-task-row {
+  display: flex;
+  background-color: #bfbdb6;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  margin: 0 auto;
+  max-width: 500px;
+  width: 50%;
+  gap: 5px;
+}
+
+.task-item svg,
+.overview-close-button svg,
+.add-calendar-button svg,
+.add-submit-button svg,
+.add-date-clear svg {
+  color: #5a6378;
+  width: 24px;
+  height: 24px;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 40px 55px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin-left: 0;
+  padding: 5px 10px;
+  gap: 10px;
+}
+
+.task-item .done {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.task-item:hover {
+  background: none;
+}
+
+.task-item input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  accent-color: #59c2ff;
+}
+
+.task-item input[type="checkbox"]:active {
+  accent-color: #73d0ff;
+}
+
+.task-due {
+  font-size: 0.875rem;
+  color: #5a6378;
+  white-space: nowrap;
+}
+
+.task-due:hover {
+  color: #bfbdb6;
+  opacity: 0.85;
+}
+
+li {
+  margin-left: 30px;
+}
+
+span,
+span.done {
+  white-space: nowrap;
+  font-size: 0.9rem;
+  min-width: 50%;
+}
+
+span.task-due {
+  white-space: nowrap;
+  font-size: 0.8rem;
+  min-width: 25%;
+}
+
+#add-text-input {
+  background: transparent;
+  font-family: "WDXL", system-ui, -apple-system, sans-serif;
+  border: none;
+  outline: none;
+  font-size: 1.25rem;
+  margin-left: 15px;
+  padding: 8px 4px;
+  min-width: auto;
+}
+
+.add-date-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px;
+}
+
+.add-date-clear:hover {
+  color: #f26d78;
+}
+
+.add-date-clear:active {
+  transform: scale(0.9);
+}
+
+.add-date-row[hidden] {
+  display: none;
+}
+
+#input-project-name {
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  margin-bottom: 25px;
+  width: 75%;
+}
+
+.modal-title {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.button-modal-confirm-set {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.button-confirm,
+.button-cancel {
+  border: none;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  padding: 5px 10px;
+  cursor: pointer;
 }
